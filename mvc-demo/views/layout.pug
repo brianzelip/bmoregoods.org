@@ -1,0 +1,27 @@
+include mixins/_flashes
+
+<!DOCTYPE html>
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title= `${title || ''} | MVC Demo`
+    link(href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet")
+    link(href="/dist/mvc-demo.css" rel="stylesheet")
+
+  body.bg-dots
+    block header
+      header.px2.bg-black
+        nav.container.flex.flex-center
+          h1.mt0.mr2.mb0.py2.fw800
+            a.white.hover-no-decoration(href="/") Bmore Goods
+          div.self-stretch.flex
+            a.flex.flex-center.px2.fw700.white.hover-bg.hover-no-decoration(href="/vendors") Vendors
+            a.flex.flex-center.px2.fw700.white.hover-bg.hover-no-decoration(href="/add") Add vendor
+        
+    block messages
+      +flashes(vendor)
+    
+    block content

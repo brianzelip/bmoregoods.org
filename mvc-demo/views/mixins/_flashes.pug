@@ -1,0 +1,12 @@
+mixin flashes(vendor = {})
+
+  if locals.flashes
+    //- pre= h.dump(locals.flashes)
+    - const categories = Object.keys(locals.flashes)
+    each category in categories
+      each message in flashes[category]
+        section.px2.mt2
+          .container
+            div(class=`flex flex-center flash flash--${category}`)
+              h1.m0.h4.regular.flex-grow!= message
+              a.btn.h3.p0.cursor(onClick="this.parentElement.remove()") &times;

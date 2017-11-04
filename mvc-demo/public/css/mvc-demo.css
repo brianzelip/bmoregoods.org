@@ -1,0 +1,259 @@
+/*! 
+  mvc-demo.css
+  by @bzelip, Basscss, and Font Awesome
+*/
+
+@import './font-awesome@4.7.0.css';
+@import './basscss@7.1.1.css';
+
+/*!
+Box Sizing via http://tachyons.io/docs/layout/box-sizing/
+*/
+html,
+body,
+div,
+article,
+section,
+main,
+footer,
+header,
+nav,
+form,
+fieldset,
+pre,
+code,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+.border-box {
+  box-sizing: border-box;
+}
+
+/* Custom properties */
+:root {
+  --black: rgb(30, 30, 30);
+  --light-gray: #efefef;
+
+  /* flashes vars */
+  --color-green: #2ecc40;
+  --color-red: #ff4136;
+  --state-success: var(--color-green);
+  --state-error: var(--color-red);
+  --bg-color-success: color(var(--state-success) tint(75%));
+  --color-success: color(var(--state-success) lightness(25%));
+  --border-color-success: color(var(--bg-color-success) shade(25%));
+  --bg-color-error: color(var(--state-error) tint(75%));
+  --color-error: color(var(--state-error) lightness(25%));
+  --border-color-error: color(var(--bg-color-error) shade(25%));
+}
+
+/* Base */
+html,
+body,
+.vh100 {
+  min-height: 100vh;
+}
+
+/* Typography */
+body {
+  color: var(--black);
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+.AveriaSerifLibre {
+  font-family: 'Averia Serif Libre';
+  /* :300,300i,400,400i,700,700i} */
+}
+.BowlbyOne {
+  font-family: 'Bowlby One';
+}
+.FugazOne {
+  font-family: 'Fugaz One';
+}
+.Lalezar {
+  font-family: 'Lalezar';
+}
+.RammettoOne {
+  font-family: 'Rammetto One';
+}
+.Shrikhand {
+  font-family: 'Shrikhand';
+}
+.MartelSans {
+  font-family: 'Martel Sans';
+}
+.MerriweatherSans {
+  font-family: 'Merriweather Sans';
+}
+.fw300 {
+  font-weight: 300;
+}
+.fw400 {
+  font-weight: 400;
+}
+.fw700 {
+  font-weight: 700;
+}
+.fw800 {
+  font-weight: 800;
+}
+
+.hover-no-decoration:hover {
+  text-decoration: none;
+}
+
+/*  background colors */
+.bg-black {
+  background-color: var(--black);
+}
+.bg-light-gray {
+  background-color: #efefef;
+}
+
+.shadow {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bg-dots {
+  background-color: #dadbdb;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2399b3f2' fill-opacity='0.32' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+input[type='date'],
+input[type='datetime-local'],
+input[type='datetime'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'] {
+  padding: 0.25rem;
+}
+
+.border,
+.field {
+  border: 1px solid rgb(204, 204, 204);
+}
+.field {
+  border-radius: 0;
+}
+
+/* icon + <input> group - two alternate components below
+ *  1. flex-based component
+ *  2. position: absolute -based component
+ */
+/* flex-based */
+.input-group-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+.input-group-flex__icon-wrapper {
+  background-color: var(--light-gray);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-right: 1px solid rgb(204, 204, 204);
+}
+.input-group-flex__input {
+  flex: 1 1 auto;
+  border: none;
+}
+.input-group-flex__input:focus {
+  border: none;
+}
+
+/* position-based */
+.input-group-position {
+  width: 100%;
+  position: relative;
+}
+.input-group-position__icon {
+  position: absolute;
+  color: #aaa;
+  line-height: 2.25rem;
+  left: 0.5rem;
+}
+input[type='text'].input-group-position__input {
+  display: block;
+  width: 100%;
+  padding-left: 2.25rem;
+}
+
+@media (min-width: 40em) {
+  .sm-mr3 {
+    margin-right: 2rem;
+  }
+}
+
+/* flexbox */
+@media (min-width: 40em) {
+  .sm-flex-row {
+    flex-direction: row;
+  }
+}
+
+.hover-bg:hover {
+  background-color: white;
+  color: var(--black);
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.flash {
+  padding: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+/* Success */
+.flash--success {
+  background-color: var(--bg-color-success);
+  color: var(--color-success);
+  border-color: var(--border-color-success);
+}
+
+/* Error */
+.flash--error {
+  background-color: var(--bg-color-error);
+  color: var(--color-error);
+  border-color: var(--border-color-error);
+}
+
+.cursor {
+  cursor: default;
+}
